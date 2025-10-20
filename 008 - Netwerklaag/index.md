@@ -1,4 +1,9 @@
 # Netwerklaag
+---
+
+<img src='./afbeeldingen/meme.png' style='height: 90vh'/>
+
+---
 
 note:
 - je machine beschikt over een hardwareadres genaamd een MAC-adres (medium access control)

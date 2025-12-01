@@ -141,3 +141,9 @@ Voorbeeld:
 
 ![voorbeeld met belangrijke onderdelen](./afbeeldingen/azure-for-students.png)
 
+
+---
+
+# Meer info
+
+[Zie de paragraaf 'Layer Architecture' op het Wikipedia-artikel](https://en.wikipedia.org/wiki/OSI_model#Layer_architecture)

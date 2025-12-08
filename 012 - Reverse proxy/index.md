@@ -63,6 +63,25 @@ Met caddy is dat een regeltje aan de config toevoegen
 
 ---
 
+### In de praktijk
+
+Welke compressie gebruikt https://mapcomplete.org?
+Welke compressie gebruikt https://wikipedia.org?
+
+notes:
+Tot mijn grote schaamte: geen. Dit is kapot 
+
+---
+
+![](./afbeeldingen/HttpCompression.png)
+
+notes:
+Transferred size is véél kleiner dan actual size
+content-encoding: gzip
+dus ZIP-compressie
+
+---
+
 ### Gebruiksgemak
 
 - Makkelijke interface om bv HTTP-headers te tweaken (bv: cache-control header)
@@ -249,11 +268,13 @@ Ook hier zou men headers, ... aan kunnen toevoegen
 
 ### TLS
 
-Caddy regelt TLS **volledig zelf**.
+Caddy regelt TLS **volledig zelf**, mits:
+ - de caddyfile **vermeld de domeinnaam (of domeinnamen)** 
+ - poort 80 én 443 zijn bereikbaar via het internet
 
+Dit is via het [ACME-protocol](https://en.wikipedia.org/wiki/Automatic_Certificate_Management_Environment)
+ 
 notes:
-Je moet een domeinnaam vermelden in je caddyfile
-Poort 80 en 443 moeten open staan én forwarden naar caddy om de ACME-challenge op te lossen
 
 Het proces in een notendop:
 1. Caddy vraagt aan _Let's encrypt_ (of een andere certificate authority) een certificaat voor `example.org`
@@ -263,15 +284,7 @@ Het proces in een notendop:
 5. De CA geeft je een certificaat
 
 	
----
 
-### In de praktijk
-
-Welke compressie gebruikt https://mapcomplete.org
-
-notes:
-Tot mijn grote schaamte: geen. Dit is kapot 
-	
 ---
 
 ### Zelf caddyfile maken: part 1
@@ -281,10 +294,19 @@ Tot mijn grote schaamte: geen. Dit is kapot
 - Start caddy. Indien via docker -> zoek zelf op in de documentatie welke mappen je moet binden om de caddyfile op de juiste plaats te krijgen
 - Test of je de files van een buur kan bezoeken
 	(Mogelijks enkel op Bletchley of hotspot mogelijk, wss niet)
+	
+---
+
+### Zelf een caddyfile maken: part 2
+
+- Zet 'compressie' aan, test in je browser of dit ook werkt
+- Gebruik 'precompressed', maak eerst '.br' (`apt install brotli`) en `.gz` bestanden
+- Fix de compressie van MapComplete, [open een PR voor de config](https://source.mapcomplete.org/MapComplete/MapComplete/src/commit/17ab3dafe61dff968482f0fa8d4a00a13b0cd083/Docs/ServerConfig/hetzner/Caddyfile#L30) (optioneel, moeilijk)
+- Zet de 'cache-control' aan zodat je browser caching gaat doen
 
 ---
 
-### Zelf caddyfile maken: part 2
+### Zelf caddyfile maken: part 3
 
 - Pas je caddyfile aan. Het pad `/express/` moet naar je express-app gaan, het pad `/files/` is de fileserver van daarnet
 	_We zagen geen matcher in de theorie. Zoek dit zelf uit met behulp van [de documentatie](https://caddyserver.com/docs/caddyfile/matchers). Gebruik géén chatGPT voor deze opdracht_

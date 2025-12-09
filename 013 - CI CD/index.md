@@ -1,12 +1,4 @@
 CI/CD
-<aside class="notes">
-    <ul>
-        <li>allemaal zelfde "C"</li>
-        <li>integration: voortdurend afstemmen dmv samenvoegen broncode</li>
-        <li>delivery: een volledige build afleveren</li>
-        <li>deployment: die build ook in productie plaatsen</li>
-    </ul>
-</aside>
 
 ---
 
@@ -232,11 +224,27 @@ Eerste blok: _wanneer_ wordt dit uitgevoerd?
 
 ```
 on:
-  workflow_dispatch:
-  push:
-  schedule:
+  push: # op elke push naar de repo
+  workflow_dispatch: # er is een extra knopje in de webinterface om te starten
+  pull_request: # wanneer er een pull request binnenkomt
+  schedule: # op vaste tijdstippen
     - cron: "0 2 * * *"
 ```
+
+Je kan afzetten wat je niet nodig hebt
+
+note:
+
+met iets als 
+```
+  push:
+    branches-ignore:
+      - build/*
+```
+
+zal _niet_ triggeren op branches die beginnen met build/
+
+---
 
 ### Syntax
 
@@ -247,41 +255,157 @@ _Wat_ moet er uitgevoerd worden?
 ```
 jobs:
   <naam>:
-    runs-on: [ <voorwaarden, bv: ubuntu-latest> ]
+    runs-on: [ <tags van runner, bv ubuntu-latest> ]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # moet er altijd staan, clone de repo
       
       - name: <name>
         run: ... bash ...
 
 ```
 
+Typische stappen: installatie dependencies, testen, bouwen, overzetten naar productie-omgeving
+
+---
+
+### Artifact
+
+> [An artifact is one of many kinds of tangible by-products produced during the development of software.](https://en.wikipedia.org/wiki/Artifact_(software_development))
+
+Een ding dat je bouwt en dat _bewaard_ moet blijven na de action
+
+Ideaal voor bv. een zip met alle source-files in, een APK, exe, ...
+Je uploadt die bij je "release". Je docker compose kan dan regelmatig checken op updates
+
+https://forgejo.org/docs/latest/user/actions/advanced-features/#artifacts
+
+
+note:
+schrijft met een I (in het Engels), geen e (wel in het Nederlands)
+
+---
+
+### Documentatie
+
+
+Forgejo heeft uitstekende documentatie:
+
+https://forgejo.org/docs/latest/user/actions/basic-concepts/
+
+
 ---
 
 
+# Oefening
 
-<li>wel onder versiebeheer en branchspecifiek, dus goed voor teams</li>
-<li>niet de enige tool voor dit soort taken</li>
-<li>maar wel dominant: zonder setup geïntegreerd met populaire dienst</li>
-<li>gratis voor publieke code (zoals vaker bij Github)</li>
-<li>zelf scripten blijft mogelijk, maar er is bijkomende structuur ("kant-en-klare" actions)</li>
-<li>runnen standaard in specifieke VM, scripts runnen lokaal en (tenzij ze zelf VM of container
-starten) kan resultaat dus verschillen</li>
+1. Maak een account op codeberg.org (OF: maak een account op OpenStreetMap.org en gebruik die om je aan te melden bij  source.mapcomplete.org)
+2. Maak een nieuwe repo
+3. Zet je express-applicatie erin
+4. Maak tests die uitvoeren met `npm run test` (hoeft niet _echt_ te testen)
+5. Maak een workflow die de volgende steps heeft:
+	a. `npm ci` om de deps te installeren
+	b. `npm run test` om de tests uit te voeren
+	c. een `docker`-afbeelding maakt en als artefact uploadt
+
+
+
 ---
-workflows / jobs / steps
-<aside class="notes">
-    <ul>
-        <li>workflow = 1 proces dat doorlopen moet worden</li>
-        <li>job = 1 taak binnen dat proces, normaal parallel</li>
-        <li>step = 1 stap binnen een job, altijd sequentieel</li>
-        <ul>
-            <li>steps kunnen scripts of actions (voorverpakte handelingen) zijn</li>
-            <li>typische actions kunnen uit soort "app store" gehaald worden</li>
-            <li>hoef dan zelf geen volledig script te schrijven</li>
-        </ul>
-    </ul>
-</aside>
+
+# Goed om te weten
+
 ---
-<section>Opdrachten</section>
-<section>Schrijf een Workflow om de tests voor de voorbeeldapplicatie te runnen voor elke commit. Test uit.</section>
-<section>Zet de in-memory versie van de gastenboekapplicatie in een Git repository. Zet die op Github. Zorg dat een Docker image gebouwd wordt wanneer je main uitbreidt.</section>
+
+### Version drift
+
+De workflow-files zitten in de versiecontrole
+
+-> Mogelijks verschillende versies afhankelijk van de branch!
+
+---
+
+### Externe acties
+
+Je kan ook acties gebruiken die in andere git-repo's staan
+
+Vaak erg nuttig, maar wel een niet-vertrouwde dependency, kan zomaar aangepast worden
+
+note:
+extra reading: https://nesbitt.io/2025/12/06/github-actions-package-manager.html
+
+
+---
+
+### Secrets
+
+Het wachtwoord van een digitale sleutel, een SSH-wachtwoord of NPM-wachtwoord kan met een 'secret'
+
+Dit werkt als een omgevingsvariable maar kan niet via de webinterface bekeken worden
+
+Zie https://forgejo.org/docs/next/user/actions/security/#secrets
+
+
+---
+
+### Oefening
+
+1. Hoe worden builds van source.mapcomplete.org gedeployed?
+2. Hoe veilig is dit?
+
+---
+
+### Je eigen, selfhosted runner
+
+Zie https://docs.codeberg.org/ci/actions/
+
+---
+
+### Veiligheid
+
+Je actie en je secrets worden gestuurd naar een _runner_. Deze runner kan dus je secrets zien.
+
+Een actie die door een pull-request getriggerd wordt, is potentieel aangepast door een aanvaller.
+Deze kan dus _secrets_ exfiltreren. 
+
+Recent (3 weken) geleden: grote supply chain attack op NPM via GH acties
+	Worm in NPM...
+	Installeert 'Github Runner' op de developer machine en voert daar code uit...
+
+note:
+https://blog.gitguardian.com/shai-hulud-2/
+https://forgejo.org/docs/next/user/actions/security-pull-request/
+
+---
+
+### Veiligheid pt 2
+
+Host je zelf je runner? 
+
+De arbitraire code zou op de runner kunnen gaan rondneuzen...
+
+-> Forgejo loopt normaalgezien de runners in een Docker of LXC-container voor isolatie
+
+---
+
+### Veiligheid: officiele aanbevelingen
+
+Runner
+
+>    Container runners are generally safe, but they may be compromised if misconfigured.
+>    Never trust a host runner if it is shared with other users.
+>    The safest option is to host your own runner, and use it only for your trusted repositories.
+
+Secrets
+
+>    Use the secrets feature to store API tokens and passwords for use in workflows.
+>    Do not print secrets to output, as these may be publicly visible.
+
+
+---
+
+### Services
+
+Je kan een "service" als docker container opzetten, bv een databank om tegen te testen
+
+Zie https://forgejo.org/docs/latest/user/actions/advanced-features/#services
+
+

@@ -1,5 +1,17 @@
 # Domain Name System
 ---
+
+[Information Service](https://www.youtube.com/watch?v=s9aThqUnGO0&t=58)
+
+---
+
+### Hoe weet je computer, als je naar "wikipedia.org" surft, welk IP-adres hierbij hoort?
+
+---
+
+![](./afbeeldingen/telefoonboek.png)
+
+---
 domein (inclusief prefix) ≈ IP-adres
 
 note:

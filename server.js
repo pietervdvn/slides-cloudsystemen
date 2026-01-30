@@ -5,7 +5,7 @@ const ejs = require('ejs');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const port = 8000;
+const port = 8001;
 const presentationTemplateFilePath = "presentation.ejs";
 const overviewTemplateFilePath = "overview.ejs";
 
@@ -46,14 +46,13 @@ app.get('/:topic', (req, res, next) => {
         next();
     }
     else {
-        const groundRules = fs.readFileSync(path.join(__dirname, "afspraken.md"), 'utf8');
         const staticDir = path.join(__dirname, topic);
         // enables relative linking of images from within presentations
         // okay to do this here
         // don't need to serve static files that will not be viewed
         app.use(express.static(staticDir));
         const contentFilePath = path.join(staticDir, "index.md");
-        const markdownContent = groundRules + fs.readFileSync(contentFilePath, 'utf8');
+        const markdownContent = fs.readFileSync(contentFilePath, 'utf8');
         ejs.renderFile(
             presentationTemplateFilePath,
             { markdownContent, folderName: topic },

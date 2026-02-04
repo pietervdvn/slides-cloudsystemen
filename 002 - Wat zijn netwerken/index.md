@@ -270,22 +270,57 @@ Vergelijkbaar met een telefoonnummer
 
 _Om je IP-addr te zien, gebruik `ip addr` op linux of `ipconfig \all` op windows_
 
-- Vergelijk dit met wat https://whatismyipaddress.com/ (of soortgelijke website) rapporteert; noteer dit
-- Wat zegt het veld 'ISP' op bovenstaande website?
 
 ---
 
-### Oefening IP-address
+# Ping
 
-Doe dezelfde opzoekingen met op 
+Programma/commanda dat een speciaal datapakketje stuurt naar een computer met de vraag om te antwoorden.
 
-- **AP Wifi**
-- **Bletchley** (ww: <code>laptop!internet</code>)
-- **mobiele hotspot**
+Wordt typisch gebruikt om netwerkproblemen vast te stellen
 
-Vergelijk met je buren
+
+> Geblokkeerd op AP Wifi
+
+note:
+Gebruikt het ICMP-protocol
+
 
 ---
+
+
+### Ping
+
+- Windows: `ping /?`
+- Mac / Linux: `man ping`
+- geblokkeerd op AP-wifi en Eduroam, maar eigenlijk ongevaarlijk; kan op Bletchley
+
+note:
+- iemand die de term van ergens kent? (Pingpong)
+  - wat staat er dan vaak bij?
+- geeft idee kwaliteit verbinding (snelheid respons)
+- ontvanger is niet verplicht te antwoorden!
+
+Hoe: 
+Windows: open powershell, type `ping example.org` en duw enter
+Linux: open terminal, zelfde
+
+---
+
+### Oefening ping
+
+
+1. Verbind met Bletchley-wifi
+2. Gebruik het commando `ping` met het IP-adres van een buur.
+3. Hoe lang duurt dit?
+
+(Alternatief: ping.eu via webomgeving)
+
+note:
+ping zou max 2ms mogen duren
+
+
+
 
 ## Hoeveel IPv4-adressen zijn er?
 
@@ -312,7 +347,7 @@ Hoeveel internet-apparaten hebben jullie?
 (Smartphone, Laptop, Tablet, bewakingscamera, slimme deurbel, IoT sensor, online VPS)
 Gemiddeld 3 apparaten PP in de Westerse wereld!
 
---
+---
 
 ## = Tekort aan IPv4-adressen!
 
@@ -324,14 +359,59 @@ note:
 
 ---
 
+### Oefening IP-address
+
+Daarnet zocht je je IP-addres op. Vergelijk dit met wat je ziet op https://whatismyipaddress.com/
+
+Test dit via:
+
+- **AP Wifi**
+- **Bletchley** (ww: <code>laptop!internet</code>)
+- **mobiele hotspot**
+
+Vergelijk met je buren
+
+- Wat zegt het veld 'ISP' op bovenstaande website?
+
+
+---
+
 
 ## NAT
 
 Waarom een ander adres op je computer als via die website?
 
+
 note:
 - We delen binnen AP-Wifi één IP-adres, de router stuurt de pakketjes juist door
 - Meer hierover later
+
+
+---
+
+## IPv6
+
+Nieuwere versie van IP-addressen.
+
+Voorbeeld: `2001:0db8:85a3:0000:1319:8a2e:0370:7344`
+
+- 4 getallen van 32 bits = 128 bits
+- Vanaf juni 2012 voor het eerst publiek bruikbaar
+
+note:
+wij gebruiken in de cursus vnml IPv4
+
+Vraag: wie had er (via hotspot) een IPv6 adres? Wie niet?
+
+---
+
+### Oefening IP-adress
+
+Je zocht via je hotspot je publieke IP-adres op.
+
+Zoek klasgenoten die dezelfde mobiele provider hebben en vergelijk jullie IP-addres.
+
+Wat valt jullie op?
 
 ---
 
@@ -371,17 +451,32 @@ Toegekend in blokken door het ICANN
 
 ---
 
-## IPv6
+## Oefening: ping
 
-Nieuwere versie van IP-addressen.
+We testen mijn beweringen!
 
-Voorbeeld: `2001:0db8:85a3:0000:1319:8a2e:0370:7344`
+Ping zal een domeinnaam opzoeken en omzetten in een IP-adres:
 
-- 4 getallen van 32 bits = 128 bits
-- Vanaf juni 2012 voor het eerst publiek bruikbaar
+- apple.com (begint dit met 17?)
+- att.com (begint dit met 12?)
+- 127.0.0.1
+- www.marian.edu
+- telenet.be
+- www.ap.be
+
 
 note:
-wij gebruiken in de cursus vnml IPv4
+_hoe_ ping een IP-adres vindt, komen we later op terug
+Apple heeft de website binnen het eigen netwerk,
+AT&T besteed dit uit
+
+---
+
+### DNS
+
+Ping kreeg een adres zoals "www.ap.be". Hoe wist die welk IP-adres hierbij hoort?
+
+> Meer hierover in een volgende les
 
 ---
 
@@ -397,52 +492,18 @@ Bv: Wifi Access Point
 
 _Meer hierover in een volgende les_
 
----
 
-# Oefeningen
 
 ---
 
-### Ping
-
-- Windows: `ping /?`
-- Mac / Linux: `man ping`
-- geblokkeerd op AP-wifi en Eduroam, maar eigenlijk ongevaarlijk; kan op Bletchley
-
-note:
-- iemand die de term van ergens kent? (Pingpong)
-  - wat staat er dan vaak bij?
-- geeft idee kwaliteit verbinding (snelheid respons)
-- ontvanger is niet verplicht te antwoorden!
-
-Hoe: 
-Windows: open powershell, type `ping example.org` en duw enter
-Linux: open terminal, zelfde
-
----
- 
-### Opdracht
-
-- verbind met Bletchley of zoek een online ping tool (`ping.eu`,...)
-- ping volgende adressen:
-  - 127.0.0.1
-  - www.marian.edu
-  - telenet.be
-  - www.ap.be
-- noteer je antwoord op volgende vragen:
-  - welke onderdelen spreken voor zichzelf?
-  - welke onderdelen zijn je onbekend?
-  - zijn er herhalingen? zo ja, waarom?
-  - wat lijkt niet te veranderen?
-  - wat zou je morgen anders verwachten?
+### Traceroute
   
----
+Tooltje zoals ping
 
-### DNS
+Stuurt pakketje uit dat vraagt aan ieder tussenliggend apparaat om info te geven over zichzelf
 
-Ping kreeg een adres zoals "www.ap.be". Hoe wist die welk IP-adres hierbij hoort?
-
-> Meer hierover in een volgende les
+- Sommige netwerken blokkeren deze berichtjes
+- Sommige tussenliggende apparaten geven geen antwoord
   
 ---
 
@@ -452,12 +513,26 @@ Doe een `traceroute` (Windows: `tracert`) naar:
   - www.marian.edu
   - telenet.be
   - www.ap.be
+  - www.apple.com
   
 Noteer het antwoord op de volgende vragen:
   - Hoeveel tussenstappen zijn er?
   - Welke stappen zijn iedere keer hetzelfde?
   - Vanaf wanneer begint het te verschillen?
   - Wat gebeurt er met de tijd?
+  - welke onderdelen spreken voor zichzelf?
+  
+  
+---
+
+### Traceroute
+
+
+Doe opnieuw een traceroue, maar deze keer via een ander netwerk (bv: je hotspot)
+
+Welk deel van de afgelegde weg is hetzelfde?
+Welk deel is er anders?
+  
   
 note:
 Meer hierover in een volgende les
@@ -466,6 +541,11 @@ Hoe:
 Windows: open powershell, type `tracert example.org` en duw enter
 Linux: open terminal, type `traceroute example.org`
 
+---
+
+### ?
+
+Alles duidelijk to zover?
   
 ---
 Installatie-opdrachten:

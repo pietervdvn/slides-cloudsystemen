@@ -195,9 +195,9 @@ note:
 
 (stemming)
 
-- A. de post
-- B. het telefoonnetwerk
-- C. het telegrafie-netwerk
+1. de post
+2. het telefoonnetwerk
+3. het telegrafie-netwerk
 
 
 ---
@@ -206,9 +206,9 @@ note:
 
 (stemming)
 
-- *A. de post*
-- B. het telefoonnetwerk
-- C. het telegrafie-netwerk
+1. **de post**
+2. het telefoonnetwerk
+3. het telegrafie-netwerk
 
 note:
 Het juiste antwoord is: _de post_!
@@ -264,40 +264,66 @@ note:
 Vergelijkbaar met een telefoonnummer
 
 ---
+### Oefening IP-address
 
-## Hoeveel IP-adressen zijn er?
+- Wat is het IP-adres van je computer? Noteer dit
 
-note:
-2^32 = ongeveer 4.2 miljard
-Aantal mensen: 8 miljard anno 2022 (https://en.wikipedia.org/wiki/World_population#Milestones_by_the_billions)
-Dus ongeveer een _half_ IP-adress per persoon
-Hoeveel internet-apparaten hebben jullie? 
+_Om je IP-addr te zien, gebruik `ip addr` op linux of `ipconfig \all` op windows_
 
-note: 
-(Smartphone, Laptop, Tablet, bewakingscamera, slimme deurbel, IoT sensor, online VPS)
-Gemiddeld 3 apparaten PP in de Westerse wereld!
-
-note:
-- te weinig IP-adressen!
-- Verschillende truuks, zoals NAT, meerdere domeinen per IP,
+- Vergelijk dit met wat https://whatismyipaddress.com/ (of soortgelijke website) rapporteert; noteer dit
+- Wat zegt het veld 'ISP' op bovenstaande website?
 
 ---
 
 ### Oefening IP-address
 
+Doe dezelfde opzoekingen met op 
 
-- Wat is het IP-adres van je computer? Noteer dit
-
-> Om je IP-addr te zien, gebruik `ip addr` op linux of `ipconfig \all` op windows
-
-- Vergelijk dit met wat https://whatismyipaddress.com/ (of soortgelijke website) rapporteert; noteer dit
-- Wat zegt het veld 'ISP' op bovenstaande website?
-
-Doe bovenstaande opzoekingen met op **AP Wifi**, **Bletchley** en je **mobiele hotspot**
+- **AP Wifi**
+- **Bletchley** (ww: <code>laptop!internet</code>)
+- **mobiele hotspot**
 
 Vergelijk met je buren
 
 ---
+
+## Hoeveel IPv4-adressen zijn er?
+
+Iemand een gok?
+
+---
+
+## 2^32 = ongeveer 4.2 miljard
+
+---
+
+## Hoeveel mensen leven er?
+
+
+---
+
+## 8 miljard
+
+note:
+Aantal mensen: 8 miljard anno 2022 (https://en.wikipedia.org/wiki/World_population#Milestones_by_the_billions)
+Dus ongeveer een _half_ IP-adress per persoon
+Hoeveel internet-apparaten hebben jullie? 
+
+(Smartphone, Laptop, Tablet, bewakingscamera, slimme deurbel, IoT sensor, online VPS)
+Gemiddeld 3 apparaten PP in de Westerse wereld!
+
+--
+
+## = Tekort aan IPv4-adressen!
+
+Ongeveer een half IP-adres per persoon,
+maar inwoners van de Westerse wereld: vaker >3 IP-apparaten per persoon
+
+note:
+- Verschillende truuks, zoals NAT, meerdere domeinen per IP,
+
+---
+
 
 ## NAT
 
@@ -305,7 +331,7 @@ Waarom een ander adres op je computer als via die website?
 
 note:
 - We delen binnen AP-Wifi één IP-adres, de router stuurt de pakketjes juist door
-- Heel wat trickery, zien jullie meer over in Datacom & Netwerken
+- Meer hierover later
 
 ---
 
@@ -341,7 +367,7 @@ Toegekend in blokken door het ICANN
 - 12.*.*.*: AT&T (Amerikaanse Telecom)
 - 17.*.*.*: Apple
 - 10.*.*.* en 192.168.*.*: intern gebruik binnen netwerken
-- 127.*.*.*: loopback
+- 127.*.*.*: loopback (dit is je de computer zelf)
 
 ---
 

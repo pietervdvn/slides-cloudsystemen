@@ -146,33 +146,7 @@ note:
 Strikvraag! Dit is een ongeldig netmasker (0100 0000 = 64, er zit een nul tussen de eentjes)
 Dit soort vragen ook op het examen/tussentijdse toets!
 
----
 
-### Zit host H/X op netwerk N/Y?
-
-
-- we moeten het netwerk van H achterhalen
-- neem het IP van H
-- pas een netmasker van X bits toe
-  - levert het netwerkgedeelte van H
-  - dus: het kleinste netwerk waarin H zit
-- bekijk het resultaat:
-  - identiek aan N en X=Y? ⇒ ja
-  - iets anders? ⇒ volgende slide
-
-
-
----
-
-### Is netwerk N1/X deel van netwerk N2/Y?
-
-- X < Y? ⇒ nee (korter netmasker = groter netwerk)
-- X = Y? ⇒ enkel als N1 = N2 (zelfde netwerk)
-- X > Y?
-  - pas netmasker van Y bits toe op N1
-  - is de uitkomst N2? ⇒ ja
-  - iets anders? ⇒ nee
-  
 ---
 
 ### Speciale adressen
@@ -191,24 +165,18 @@ note:
   - antwoord: 2^(32-N)-2 ("twee minder dan twee tot de macht H, waarbij H het aantal hostbits is")
 ---
 
-### Oefeningen
-
-Met "netwerkadres" wordt bedoeld: het IP-adres van een netwerk, niet van een gewone host.
-
-- Is 10.4.3.0/16 een mogelijk netwerkadres?
-- Is 192.168.0.0/16 een mogelijk netwerkadres?
-- Is 192.168.0.0/8 een mogelijk netwerkadres?
-- Is 10.4.224.0/18 een mogelijk netwerkadres?
+### Zit host H/X op netwerk N/Y?
 
 
----
+- we moeten het netwerk van H achterhalen
+- neem het IP van H
+- pas een netmasker van X bits toe
+  - levert het netwerkgedeelte van H
+  - dus: het kleinste netwerk waarin H zit
+- bekijk het resultaat:
+  - identiek aan N en X=Y? ⇒ ja
+  - iets anders? ⇒ Zie zodadelijk
 
-### Oefeningen
-
-- Is 172.25.13.0/24 een subnet van 172.16.0.0/12?
-- Is 172.16.0.0/13 een subnet van 172.16.0.0/12?
-- Met welke eerste bytewaarde kunnen subnetten van 10.0.0.0/8 allemaal beginnen?
-- Met welke eerste twee bytewaarden kunnen subnetten van 200.16.0.0/12 allemaal beginnen?
 
 ---
 
@@ -222,8 +190,20 @@ Gevraagd:
 - Netwerkadres
 - Broadcastadres
 - Hostgedeelte (binair)
-- Eerste en laatste hostadres subnet
+- Eerste en laatste host-adres subnet
 - Maximaal aantal hosts
+
+note:
+
+13 = 0000 1101
+3 bits laatste getal vast
+Netwerk: 192.168.1.0/27
+Broadcast: laatste 5 bits op 11111, dus: 192.168.1.31
+
+Kleinste IP-adres: 192.168.1.1
+Hoogste: 192.168.1.30
+Dus: 30 hosts
+
 
 ---
 
@@ -256,6 +236,73 @@ Gevraagd:
 - Eerste en laatste hostadres subnet
 - Maximaal aantal hosts
 
+
+
+
+
+---
+
+### Is netwerk N1/X deel van netwerk N2/Y?
+
+- X < Y? ⇒ nee (korter netmasker = groter netwerk)
+- X = Y? ⇒ enkel als N1 = N2 (zelfde netwerk)
+- X > Y?
+  - pas netmasker van Y bits toe op N1
+  - is de uitkomst N2? ⇒ ja
+  - iets anders? ⇒ nee
+  
+---
+
+
+### Oefeningen
+
+Met "netwerkadres" wordt bedoeld: het IP-adres van een netwerk, niet van een gewone host.
+
+- Is 10.4.3.0/16 een mogelijk netwerkadres?
+- Is 192.168.0.0/16 een mogelijk netwerkadres?
+- Is 192.168.0.0/8 een mogelijk netwerkadres?
+- Is 10.4.224.0/18 een mogelijk netwerkadres?
+
+
+
+note:
+1. Neen, dit is geen beschrijving van een netwerk: een host-bit staat op (3de byte = 3) 
+2. Ziet er correct uit
+3. Nee, 2de byte niet volledig nul
+4. Neen, laatste zes bits van derde byte niet allemaal nul (11 100 000)
+
+---
+
+### Oefeningen
+
+- Is 172.25.13.0/24 een subnet van 172.16.0.0/12?
+- Is 172.16.0.0/13 een subnet van 172.16.0.0/12?
+- Met welke eerste bytewaarde kunnen subnetten van 10.0.0.0/8 allemaal beginnen?
+- Met welke eerste twee bytewaarden kunnen subnetten van 200.16.0.0/12 allemaal beginnen?
+
+note:
+
+Oefening 1:
+172.25.13.0 = 1010 1100 . 0001 1001 . 000 1101 . 0
+172.16.0.0  = 1010 1100 . 0001 0000 . 0 . 0
+              NETDEEL         | HOST                             
+Eerste twaalf bits dezelfde? JA
+
+Oefening 2:
+172.16.0.0  = 1010 1100 . 0001 0000 . 0 . 0
+Ja, eerste twaalf bits dezelfde
+
+Oefening 3:
+Enkel 10, eerste byte is steeds dezelfde
+
+Oefening 4:
+16 = 0001 0000
+Eerste byte: steeds 200
+Tweede byte: eerste vier bits steeds dezelfde, nml 0001 = 16
+Laatste 4 bits naar keuze, range (0 --> 7)
+Dus: 16 + (0 --> 7) = 16 --> 23
+
+
 ---
 
 IP-adressen voor:
@@ -286,7 +333,7 @@ Voorbeeld: hotspot op je GSM (Wifi <-> Mobiel)
 note:
 
 Fysieke netwerkinterfaces, dus bv: twee kabel-aansluitingen, of kabel+wifi, of meerdere wifi-antennes in één apparaat. Kan evengoed een desktop-computer met 2 netwerkkaarten zijn.
-Loopbak (127.0.0.1) telt niet. Met virtuele machines en netwerken in één computer zit er wél een virtuele router in je PC - maar dit is een randgeval!
+Loopback (127.0.0.1) telt niet. Met virtuele machines en netwerken in één computer zit er wél een virtuele router in je PC - maar dit is een randgeval!
 
 Gewone hardware kan dus als router optreden, maar speciale apparatuur is (energie)-performanter.
 

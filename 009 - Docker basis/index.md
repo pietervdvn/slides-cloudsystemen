@@ -54,3 +54,27 @@ note:
 
 note:
 - pro tip: neem de basisimage en zet het `CMD` op `sleep infinity`, log dan in met `docker exec -it CONTAINERNAAM sh` (of `bash` indien ondersteund), **test een stap uit en voeg hem dan pas toe aan de Dockerfile**
+---
+
+## Overzicht
+
+image: blauwdruk van een image
+container: gestarte instantie (kan je starten, stoppen)
+
+Een image bouwen: `docker build . -t <name>`
+
+In je huidige directory moet een `Dockerfile`
+
+---
+
+Een container starten adhv image met name `<image-name>`: `docker run <image-name>`
+
+Een poort linken: `docker run -p <port-on-host>:<port-in-container> <image-name>`
+
+---
+
+Extra bronnen
+
+[Dockerfile documentation](https://docs.docker.com/build/concepts/dockerfile/)
+
+---

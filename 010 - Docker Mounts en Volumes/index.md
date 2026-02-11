@@ -5,13 +5,40 @@ Tip: `docker exec -it NAAM_CONTAINER bash`
 
 ### Opfrissing: docker image maken
 - Download "voorbeeldapplicatie Express"
-- Maak een nieuwe Dockerfile op basis van <code>ubuntu:latest</code>
+- Maak een nieuwe Dockerfile op basis van <code>node:20</code>
 - Kopieer de nodige bestanden naar een map <code>/app</code> in de image. 
-- `apt update`, Installeer <code>nodejs</code>, <code>npm</code>
 - Zorg dat de nodige packages geïnstalleerd worden in de image (`npm ci`).
 - Zorg dat de applicatie wordt opgestart wanneer de container start.
 - Zorg ook dat hij naar de gebruikte poort luistert.
 - Bouw en start de container.
+
+---
+
+Opslaan als `Dockerfile` naast bestanden
+
+```dockerfile
+FROM node:20
+
+# maakt ook meteen deze directory indien deze niet bestaat
+WORKDIR /app
+# Kopieer de inhoud van de huidige directory van host naar de WORKDIR in de image
+COPY . .
+# Installeer dependencies (nodejs)
+RUN npm ci
+# Exporteer poort 3000
+EXPOSE 3000
+
+# Wanneer de container start: voer dit commando uit
+CMD [ "nodejs", "hello.js" ]
+```
+
+---
+
+Hoe uitvoeren:
+1. cd `<directory>`	
+2. `docker build . -t <tagname>`
+3. `docker run -p 3000:3000 <tagname>`
+4. Bezoek [localhost:3000](https://localhost:3000) - hierop zou je express-app te zien moeten zijn
 
 ---
 
@@ -97,6 +124,33 @@ note:
 4. Verwijder de container
 5. Maak een nieuwe container, log daar op in en controleer of je de data terugvindt
 
+note:
+https://hub.docker.com/_/mysql voor documentatie
+`docker create volume cloudsystemen-db` om volume te maken
+`docker run --name Cloudsystemen -v cloudsystemen-db:/var/lib/mysql -e MYSQL_DATABASE=Cloudsystemen -e MYSQL_ROOT_PASSWORD=DitIsGoed mysql`
+Noot: mogelijks is `3306` al in gebruik, dan kan je een andere poort gebruiken met `-p <poortnummer>:3306`
+
+Beheren met: 
+`mysql -h 127.0.0.1 -P 3306 --user=root --password Cloudsystemen` opstarten, volume koppelen (-v), via environment variabelen (-e) mysql instrueren
+
+Dan kom je in een SQL-interpreter, daar kan je dan commando's uitvoeren, bv:
+
+TODO: user maken
+`CREATE TABLE persoon(id int, name VARCHAR(255));`
+`INSERT INTO persoon VALUES (0, "pietervdvn");`
+`SELECT * FROM Persoon;`
+
+Controleer of de data in je volume staat
+
+`docker volume inspect cloudsystemen-db`, dan gegeven pad bekijken
+
+`docker stop Cloudsystemen`
+`docker rm Cloudsystemen`
+
+Als je dan herstart met eerste commando, heb je dezelfde data terug!
+
+
+
 ---
 Container networking
 
@@ -116,3 +170,18 @@ note:
 - `docker network ls`
 - `docker run --network NETWERKNAAM ...`
 - `docker network connect NETWERKNAAM CONTAINERNAAM`
+
+
+---
+
+### DNS-resolutie in Docker
+
+note:
+- namen van containers als hostnamen gebruiken (intern DNS-systeem)
+- dit werkt alleen op expliciet aangemaakte netwerken, niet op het automatisch aangemaakte `bridge` netwerk!
+---
+Opdracht: uitbreiden met Mailhog
+
+note:
+- download de code voor het guest book met Mailhog
+- configureer de containers zodat de volledige applicatie werkt

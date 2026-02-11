@@ -2,3 +2,9 @@ section.no-screens-slide::after {
     content: "Laptops dicht" "\A" "GSM's weg";
     white-space: preserve-breaks;
 }
+
+.mermaid {
+	background: white !important;
+	display: flex !important;
+	justify-content: center
+}

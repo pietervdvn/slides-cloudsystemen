@@ -194,6 +194,10 @@ Codeberg.org biedt zelf (gelimiteerde) runners aan
 
 ---
 
+Eerst aanzetten in `settings`
+
+---
+
 Elke actie wordt beschreven in een yaml-bestand.
 
 Deze staan in `.github/workflows/` of `.forgejo/workflows/`
@@ -305,9 +309,6 @@ https://forgejo.org/docs/latest/user/actions/basic-concepts/
 5. Maak een workflow die de volgende steps heeft:
 	a. `npm ci` om de deps te installeren
 	b. `npm run test` om de tests uit te voeren
-	c. een `docker`-afbeelding maakt en als artefact uploadt
-
-
 
 ---
 
@@ -348,7 +349,7 @@ Zie https://forgejo.org/docs/next/user/actions/security/#secrets
 
 ### Oefening
 
-1. Hoe worden builds van source.mapcomplete.org gedeployed?
+1. Hoe worden builds van source.mapcomplete.org/mapcomplete/mapcomplete gedeployed (deploy_hosted)?
 2. Hoe veilig is dit?
 
 ---

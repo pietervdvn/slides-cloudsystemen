@@ -160,21 +160,6 @@ Er is verschil in features, i.e. niet elke software heeft elke feature
 
 ---
 
-### We gaan het vandaag hebben over...
-
----
-
-![](./afbeeldingen/DeadTraefik.png)
-
-notes:
-No gopher was harmed for making this image.
-
-Ik vroeg chatGPT om het logo om te vormen tot een dode gopher.
-Maar dat wou die niet.
-Je ziet hier dus een gopher-acteur die "dramatisch neerligt in een pas ketchup"
-
----
-
 # Caddy
 
 note: 

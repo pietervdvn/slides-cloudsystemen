@@ -42,7 +42,8 @@ Bestaat ook ouder systeem met "klassen". Niet belangrijk voor programmeurs.
 ---
 
 - 192.168.0.222
-
+- 8.8.8.8
+- 127.0.0.1 (eigen computer)
 
 ---
 
@@ -360,16 +361,16 @@ note:
 
 ```mermaid 
 flowchart LR
-UPLINK{ISP 🌐} --> A
+UPLINK{ISP 🌐} <--> A
 
-A[10.\*.\*.\*] --> B[10.10.\*.\*]
-B --> C[🖥️ 10.10.0.1]
-B --> F[📱 10.10.0.2]
+A[10.\*.\*.\*] <--> B[10.10.\*.\*]
+B <--> C[🖥️ 10.10.0.1]
+B <--> F[📱 10.10.0.2]
 
-A --> H[10.20\*.\*]
-H --> I[🖥️ 10.20.8.3]
-H --> K[🖥️ 10.20.175.213]
-H --> L[📱 10.20.85.42]
+A <--> H[10.20\*.\*]
+H <--> I[🖥️ 10.20.8.3]
+H <--> K[🖥️ 10.20.175.213]
+H <--> L[📱 10.20.85.42]
 ```
 Hoe gaat een pakketje van 10.20.8.3 naar 10.10.0.1?
 Hoe gaat een pakketje van 10.20.8.3 naar 82.199.86.103?
@@ -529,7 +530,7 @@ privé-adresblokken:
 - 10.0.0.0/8
 - 172.16.0.0/12
 - 192.168.0.0/16
-- localhost: 127.0.0.0/24
+- localhost: 127.0.0.0/24 (verwijst steeds naar eigen computer)
 
 note:
 - deze adresblokken zijn niet publiek toegankelijk
@@ -537,30 +538,7 @@ note:
 - je kan er zelf een netwerk mee maken dat niet (rechtstreeks) toegankelijk is via het Internet
 - probeer eens: `ifconfig` of `ipconfig` (naargelang je systeem) ⇒ je vindt waarschijnlijk minstens een adres in deze blokken terug
 
----
-NAT (PAT)
-
-note:
-- Netwerkadresvertaling / Network Address Translation
-- Vergelijk: ipconfig en myip.com
-- (indien IPv4): zal voor iedereen **zelfde** zijn!
----
-
-note:
-- bestaan variaties op het concept, maar dit is wat je typisch moet weten als programmeur
-  - sommige zaken moeten **eerst** de connectie opstarten (jij kan thuis niet zomaar als server werken)
-  - poort die zichtbaar is aan ontvangerkant is niet noodzakelijk echte poort van de afzender
-  - PAT doorbreekt protocolstapel (netwerklaag kijkt naar poorten van transportlaag)
-    - nadeel: routers moeten details van TCP/UDP kennen, die protocols zijn wel dominant maar hindert andere zaken die bovenop IP staan
-    - NAT/PAT doet al vrij lang goed dienst, maar is een "hack". Manuele port forwarding is soms nodig, nieuwe protocols bovenop IP implementeren is lastig.
-    - truukje "hole punching" (en reden) moet je kennen voor applicaties
 
 ---
 
-# NAT != Firewall
-
-note
-
-Door NAT toe te passen, worden veel binnenkomende pakketjes vanzelf gedropt en werkt dit als firewall
-Wanneer we IPv6 (eindelijk) gaan beginnen gebruiken, gaan we rechtsstreeks online gaan en gaan we firewalls nodig hebben
-
+<img src='./afbeeldingen/meme.png' style='height: 90vh'/>

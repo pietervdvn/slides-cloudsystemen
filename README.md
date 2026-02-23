@@ -9,7 +9,7 @@ Deze worden door een javascript-programma omgezet in een website die de slides m
 ### Installatie dependencies
 
 - Installeer `git`, `nodejs` en `npm` op je systeem.
-- Doe `git clone git@github.com:AP-IT-GH/slides-cloudsystemen.git; cd slides-cloudsystemen; npm ci;`
+- Doe `git clone git@github.com:pietervdvn/slides-cloudsystemen.git; cd slides-cloudsystemen; npm ci;`
 
 ### Opstarten na installatie dependencies
 

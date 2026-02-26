@@ -100,6 +100,10 @@ note:
 
 - verwacht niet dat je ze na deze slide allemaal uit het hoofd kent, gewoon dat je je een beeld vormt!
 
+--
+
+[In een notendop](https://www.youtube.com/watch?v=EPoNyBss5I8)
+
 ---
 - conceptueel overzicht
 - relaties tussen gehelen zijn duidelijk

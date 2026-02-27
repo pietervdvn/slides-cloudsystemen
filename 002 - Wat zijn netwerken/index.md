@@ -143,12 +143,13 @@ Waarvan komt dit?
 
 [Switchboard operator](https://www.youtube.com/watch?v=s9aThqUnGO0)
 
-note:
-- Op hackerkampen worden vaak nog oude field-phone netwerken uitgerold. Je mag die zélf bedienen daar!
-
+²
 ---
 
 ![](./afbeeldingen/why.jpg)
+
+note:
+- Op hackerkampen worden vaak nog oude field-phone netwerken uitgerold. Je mag die zélf bedienen daar!
 
 
 ---

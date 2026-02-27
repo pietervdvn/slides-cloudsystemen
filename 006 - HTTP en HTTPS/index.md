@@ -24,15 +24,17 @@ note:
   - deze server is een "web server"
 - verschillende versies van HTTP, niet allemaal zomaar te doorzoeken in Wireshark (nieuwer ⇒ meer beveiliging)
 ---
-Demo PacketTracer
+
+Demo webconsole
 
 note:
-- gebruik file `surfen.pkt` bij deze slides
-- toon: server heeft IP
-- activeer simulation mode
-- probeer naar server te surfen
-- onderzoek pakketjes om protocol en inhoud te tonen
-- werk zo de request response cycle af
+
+- bezoek een website
+- wat zie je allemaal?
+
+
+
+
 ---
 Verschillende versies
 
@@ -60,6 +62,17 @@ note:
 - werking web server voor een **statische pagina**
 - niet alleen gebruikt voor de HTML-pagina, maar ook voor de "embedded content"
 - HTML-pagina's zijn dus niet de enige toepassing, gewoon de duidelijkste
+
+---
+
+![gebruik URL](./afbeeldingen/gebruikURL.png)
+
+Hoe komen we aan die naam?
+
+note:
+Meer over namen in een volgende les (DNS)
+Voorlopig mag je denken dan een naam een IP-adres voorstelt
+
 ---
 <!-- .slide:data-background="#ffffff"-->
 ![niet-persistente verbinding](./afbeeldingen/HTTP-non-persistent.png)
@@ -345,6 +358,24 @@ note:
 - verwant aan een VPN, maar focus ligt op caching i.p.v. verbeteren privacy
 - soms beperkt tot HTTP, soms voor alle soorten verkeer
 - lijstje: https://www.fortinet.com/resources/cyberglossary/proxy-server
+
+
+---
+**reverse** proxy
+
+note:
+- past **inkomend** verkeer aan eerder dan uitgaand 
+- kan gebruikt worden om aparte web servers op zelfde machine te runnen
+- kan gebruikt worden om HTTPS te voorzien wanneer de web servers dit zelf niet ingebouwd hebben
+- je zal er zo eentje voorzien voor je projectopdracht
+- **veronderstel in code niet dat je rechtstreeks met de andere partij spreekt!**
+
+---
+
+**reverse proxy**
+
+Meer hierover in een volgende les
+
 ---
 <!-- .slide:data-background="#FEFDDE"-->
 ![MITMproxy](./afbeeldingen/mitmproxy.gif)
@@ -373,15 +404,7 @@ note:
 - Pas het weerbericht aan dat de ontvanger te zien krijgt
 - Laat het gewijzigde antwoord versturen
 - Zie je het aangepaste weerbericht in de terminal?
----
-**reverse** proxy
 
-note:
-- past **inkomend** verkeer aan eerder dan uitgaand 
-- kan gebruikt worden om aparte web servers op zelfde machine te runnen
-- kan gebruikt worden om HTTPS te voorzien wanneer de web servers dit zelf niet ingebouwd hebben
-- je zal er zo eentje voorzien voor je projectopdracht
-- **veronderstel in code niet dat je rechtstreeks met de andere partij spreekt!**
 ---
 - Lees [deze pagina](https://docs.mitmproxy.org/stable/concepts-modes/#reverse-proxy) tot en met "Listen port"
 - Zorg dat HTTP-verkeer naar localhost:8080 wordt omgeleid naar neverssl.com via de terminalversie van `mitmproxy`

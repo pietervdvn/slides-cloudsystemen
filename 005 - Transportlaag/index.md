@@ -235,8 +235,8 @@ note:
 
 ### 1. Slides hosten op PC
 
-Doe `git clone` op de slides
-Voer `npm ci` uit (eenmalig)
+
+Zie https://github.com/pietervdvn/slides-cloudsystemen voor instructies
 
 Gebruik `npm run start` om de slides te starten;
 surf naar http://127.0.0.1:8000 om dit te testen

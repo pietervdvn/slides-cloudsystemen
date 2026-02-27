@@ -3,8 +3,23 @@ section.no-screens-slide::after {
     white-space: preserve-breaks;
 }
 
+.text-small {
+  font-size: 0.8em;
+}
+
+.text-xsmall {
+  font-size: 0.65em;
+}
+
 .mermaid {
 	background: white !important;
 	display: flex !important;
 	justify-content: center
+}
+.columns {
+  display: flex;
+  gap: 40px;
+}
+.column {
+  flex: 1;
 }

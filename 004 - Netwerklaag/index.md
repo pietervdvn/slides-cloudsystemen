@@ -487,7 +487,7 @@ typische duurtijd: 3 * typische blijftijd
 
 ### Opdracht
 
-Wat is de DHCP-server van `AP Wifi`?
+Wat is de DHCP-server van `AP Wifi`?<br>
 Hoe lang is de lease?
 
 note:

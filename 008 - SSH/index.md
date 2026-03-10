@@ -69,7 +69,7 @@ Opdracht:
 - sleutelpaar aanmaken: `ssh-keygen -t rsa` met defaults en lege passphrase
 - kijk in (verborgen map) `.ssh`
 - kopieer naar server: `ssh-copy-id -i ~/.ssh/id_rsa.pub username@remotehost`
-  - dit combineert `scp` met een append in `authorized_keys`
+  - dit combineert `scp` met een append in `.ssh/authorized_keys`
 - log in op de server
 - `chmod 700 ~/.ssh` beperkt rechten op deze map
 - `chmod 600 ~/.ssh/authorized_keys` beperkt rechten file

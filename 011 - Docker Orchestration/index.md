@@ -9,9 +9,28 @@ note:
 - intro tot YAML en YAML converter gelinkt
 ---
 
-# docker-compose.yml
+Mijn webservice bestaat uit 10 containers...
 
-Moet vaste name hebben
+Hoe onderhoud ik dit?
+Wat als één component crashed?
+Wat als één component update?
+
+
+---
+
+```dockerfile
+docker run service_db ...
+docker run service_frontend -p 443:1234 ...
+docker run service_backend -p 1222:351
+docker run caddy ....
+```
+
+note:
+dit wordt een soepje
+
+---
+
+#### docker-compose.yml
 
 ```yaml
 version: '3.8'  # Version of the Docker Compose file format
@@ -44,7 +63,16 @@ volumes:  # Define named volumes for persistent storage
 
 
 note:
+Moet vaste name hebben
 - Zie ook https://dev.to/abhay_yt_52a8e72b213be229/understanding-docker-compose-file-format-structure-options-and-best-practices-3nob
+
+---
+
+### Intermezzo: YAML?
+
+WTF is die rare JSON?
+
+https://spacelift.io/blog/yaml
 
 ---
 
@@ -65,3 +93,13 @@ Alles in één keer aanzetten (of afzetten):
 - `depends_on`: container is **gestart**, niet altijd **klaar**
     - voeg bijvoorbeeld script toe
 - `environment`: omgevingsvariabelen voor configuratie en secrets
+
+---
+
+1. Download op digitap het mysql-gebaseerde gastenboek
+2. Maak hier een docker-image voor
+3. Maak een docker-compose met die je gastenboek en de mySQL-databank opstart
+   - Je mag in de code het wachtwoord en IP-adres aanpassen om te testen
+   - Probeer om met een env-variable het IP-adres van de server door te geven aan de app
+   - Probeer om met een docker-secret het wachtwoord door te geven aan de app
+4. Zorg ervoor dat deze samenwerken, test

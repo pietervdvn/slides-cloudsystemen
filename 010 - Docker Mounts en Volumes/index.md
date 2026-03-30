@@ -106,7 +106,11 @@ note:
 - niet uit het hoofd te kennen, hou gewoon ergens bij
 ---
 
-Demonstratie: Express applicatie uitbreiden
+## Express applicatie uitbreiden
+
+- Vertrek vanaf "guest book filegebaseerd"
+- Maak een dockerfile hiervoor
+- Start een container; zorg ervoor dat de guestbook.json op je host-besturingssysteem terecht komt
 
 note:
 - Express applicatie gastenboek staat al in onderdeel Docker Compose op DigitAP
@@ -179,6 +183,20 @@ note:
 note:
 - namen van containers als hostnamen gebruiken (intern DNS-systeem)
 - dit werkt alleen op expliciet aangemaakte netwerken, niet op het automatisch aangemaakte `bridge` netwerk!
+---
+
+### Gebruik documentatie
+
+https://docs.docker.com/reference/dockerfile/
+
+Opdracht: 
+
+- Wat doet het 'VOLUME'-commando?
+
+note:
+- Belangrijk dat jullie ook documentatie leren te raadplegen
+- Wij kunnen jullie hier in de les niet alles leren!
+
 ---
 Opdracht: uitbreiden met Mailhog
 

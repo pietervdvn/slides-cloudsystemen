@@ -23,3 +23,97 @@ section.no-screens-slide::after {
 .column {
   flex: 1;
 }
+
+table {
+    font-size: 1.8rem;
+}
+
+.hint {
+    margin-top:1.5rem;font-style:italic;color:#8899aa;font-size:1.45rem;
+}
+
+.ipv4-structure {
+  font-size:1.6rem;
+  line-height:1.2;
+}
+
+.octet-row {
+  display:flex;
+  gap:20px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.octet {
+  flex:1;
+  border:2px solid #00cfff;
+  padding:10px;
+}
+
+.dot {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:20px;
+  font-size:70px;
+}
+
+.info-row {
+  display:flex;
+  gap:20px;
+}
+
+.info-box {
+  flex:1;
+  border-left:4px solid #f1c40f;
+  padding:10px;
+}
+
+.text-small {
+  font-size:0.8em;
+}
+
+.network {
+  color:#00bcd4;
+  font-weight:bold;
+}
+
+.host {
+  color:#e53935;
+  font-weight:bold;
+}
+
+.network-host {
+  font-size:1.2rem;
+}
+
+.intro {
+  text-align:center;
+  margin-bottom:1rem;
+}
+
+.two-columns {
+  display:flex;
+  gap:2rem;
+  margin-top:1rem;
+}
+
+.card {
+  flex:1;
+  border-left:5px solid #f5a623;
+  padding:1rem;
+}
+
+.binary-box {
+  border:2px solid #e53935;
+  padding:1rem;
+  border-radius:6px;
+  margin-bottom:1rem;
+}
+
+.example {
+  text-align:center;
+  font-size:1.3rem;
+  font-weight:bold;
+  margin-top:1rem;
+}

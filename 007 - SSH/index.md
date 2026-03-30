@@ -41,9 +41,67 @@ note:
 ---
 ![interactie client-server](./afbeeldingen/SSHkeydiagram.webp)
 
-note:
-- zullen iets verderop zelf sleutels maken!
 ---
+
+Opdracht:
+
+- Kijk in je home directory, in de map `.ssh`. Bestaat deze? (Zoniet: maak ze).
+- Staat hier reeds een `.pub` bestand in? Bekijk dit met een tekst-editor. Dit is je **publieke sleutel**
+- Er is een overeenkomstig bestand _zonder_ extensie. Bekijk deze; dit is je private sleutel.
+- Bestaat dit nog niet? Maak een sleutelpaar met `ssh-keygen -t rsa` met defaults en lege passphrase
+- kijk in (verborgen map) `.ssh`
+
+---
+
+Met je publieke sleutel kan je je toegang tot (o.a.) github automatiseren.
+
+- Ga naar je github-instellingen en kijk waar je een SSH-sleutel kan toevoegen
+- Test daarna de connectie met `ssh git@github.com`
+- Lees aandachtig wat er op het scherm verschijnt. Is het aanmelden gelukt?
+- Bekijk welk stukje tekst je aan `git clone` moet geven om met SSH een repo te clonen. Welke onderdelen herken je?
+- Clone nu een repo met SSH (eventueel maak je een nieuwe repo aan)
+- Test `git push`. Moet je je nog aanmelden? 
+
+---
+
+# Inloggen op een linux-machine
+
+---
+
+## Met username en wachtwoord
+
+`ssh [username@]computernaam [-p <poortnummer>]`
+
+Bijvoorbeeld:
+
+`ssh pietervdvn@10.20.30.40`
+`ssh root@example.org -p 2222`
+
+- Geen poortnummer gegeven? Default is *22*
+- Geen username? Gebruikt username waarmee je op je computer bent aangemeld
+- Je mag ofwel een IP-adres, ofwel een DNS-naam gebruiken
+
+note:
+- Waarom een andere poort gebruiken? Zet bots die het internet afspeuren op het foute been. Klein beetje extra security - maar niet veel
+
+---
+
+## Eerste flow
+
+- Wanneer je voor het eerst verbindt, zal de SSH-client je de _fingerprint_ tonen van de server
+- Bevestig dat je deze vertrouwt
+- Je wachtwoord wordt gevraagd
+
+Waarom toch nog een wachtwoord gevraagd? We maakten toch een publieke/private sleutel?
+
+note:
+- De fingerprint is gebaseerd op de publieke sleutel van de server. Indien deze plots veranderd, heb je wss een man in the middle
+- Je hoort deze vingerafdruk _out of band_ na te kijken, bv door aan de sysadmin te vragen of deze vingerafdruk klopt of via rechtstreekse connectie die te bekijken.
+  - Dit gebeurt vaak niet, maar wél nodig voor kritieke infrastructuur!
+- Je publieke sleutel is nog niet gekend door de server, je kan hier dus nog niet mee aanmelden
+
+---
+
 authorized_keys
 
 note:
@@ -58,6 +116,9 @@ note:
 - waarschuwing bij nieuwe bestemming
   - waarom denk je dat dit belangrijk is?
 ---
+
+Indien de lesgever géén SSH-server ter beschikking stelt, maken we zelf een Linux-machine waarop dit kan:
+
 Opdracht:
 - installeer VM met [Debian netinstall](https://www.debian.org/CD/netinst/)
   - activeer tijdens installatie "SSH server"
@@ -65,19 +126,14 @@ Opdracht:
 - noteer usernaam en wachtwoord tijdens installatie
 - log in met wachtwoord
 ---
-Opdracht:
-- sleutelpaar aanmaken: `ssh-keygen -t rsa` met defaults en lege passphrase
-- kijk in (verborgen map) `.ssh`
+
 - kopieer naar server: `ssh-copy-id -i ~/.ssh/id_rsa.pub username@remotehost`
   - dit combineert `scp` met een append in `.ssh/authorized_keys`
 - log in op de server
 - `chmod 700 ~/.ssh` beperkt rechten op deze map
 - `chmod 600 ~/.ssh/authorized_keys` beperkt rechten file
 - test login zonder wachtwoord
----
-Opdracht:
-- registreer je (publieke!) sleutel op je Github account
-- clone een publieke repository met het SSH-protocol (niet met HTTPS)
+
 ---
 config
 

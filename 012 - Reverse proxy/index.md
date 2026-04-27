@@ -27,8 +27,12 @@ De achterliggende services zijn netwerkservices, mogelijks op een _andere_ serve
 
 - Veiligheid
 - Stabiliteit
+- Performance
+- Gebruiksgemak
 - TLS
 
+note:
+Dit is de inhoudsopgave, nog niet teveel uitleg geven
 
 ---
 
@@ -43,6 +47,7 @@ De achterliggende services zijn netwerkservices, mogelijks op een _andere_ serve
 
 - Load balancing
 - Automatische error-message indien de service zélf kapot is
+- Automatische fail-over indien er verschillende redundante services zijn
 
 Note:
 load balancing is als je verschillende, identieke services naast elkaar runt. Je kan de aanvragen dan over verschillende machines verdelen. Als er eentje defect is of volop bezig, spring de andere bij.
@@ -68,8 +73,9 @@ Met caddy is dat een regeltje aan de config toevoegen
 Welke compressie gebruikt https://mapcomplete.org?
 Welke compressie gebruikt https://wikipedia.org?
 
+
 notes:
-Tot mijn grote schaamte: geen. Dit is kapot 
+Bekijk in de dev-tools van je browser de "Content-encoding" van de "response headers"
 
 ---
 
@@ -79,6 +85,9 @@ notes:
 Transferred size is véél kleiner dan actual size
 content-encoding: gzip
 dus ZIP-compressie
+Denk-vraag: waarom worden PNGs _niet_ gecomprimeerd?
+	> dit formaat is al sterk gecomprimeerd, verder comprimeren is niet mogelijk
+
 
 ---
 
@@ -230,7 +239,7 @@ eerste lijn: één of meerdere domeinnamen. Alles voor deze domeinnaam wordt doo
 In het blok:
 - `encode`: gebruik compressie. Verhaaltjestijd: mijn applicatie is nogal zwaar (voor een website): 
 - `header-block`: voegt HTTP-headers toe, bv. om CORS, cache-control, ... in te stellen
-
+- `browse` zit in de oefeningen
 
 ---
 
@@ -247,7 +256,6 @@ Note:
 requests die binnenkomen voor `report.mapcomplete.org` worden gelezen, herverpakt als http (_zonder_ TLS) en doorgestuurd naar poort 2348
 
 Ook hier zou men headers, ... aan kunnen toevoegen
-
 
 ---
 
@@ -268,26 +276,26 @@ Het proces in een notendop:
 4. Caddy beantwoord de challenge door deze ondertekend terug te sturen
 5. De CA geeft je een certificaat
 
-	
+---
+
+
+### Meer info, bronnen
+
+[Officiële caddy documentatie](https://caddyserver.com/docs/getting-started)
+
+---
+
+# Oefeningen
 
 ---
 
 ### Zelf caddyfile maken: part 1
 
 - Maak een caddyfile in, host enkele _files_
-- Schakel de `browse`-directive in. Wat doet deze directive?
+- Schakel de `browse`-directive in. Wat doet deze directive? Bekijk dit in de documentatie
 - Start caddy. Indien via docker -> zoek zelf op in de documentatie welke mappen je moet binden om de caddyfile op de juiste plaats te krijgen
 - Test of je de files van een buur kan bezoeken
 	(Mogelijks enkel op Bletchley of hotspot mogelijk, wss niet)
-	
----
-
-### Zelf een caddyfile maken: part 2
-
-- Zet 'compressie' aan, test in je browser of dit ook werkt
-- Gebruik 'precompressed', maak eerst '.br' (`apt install brotli`) en `.gz` bestanden
-- Fix de compressie van MapComplete, [open een PR voor de config](https://source.mapcomplete.org/MapComplete/MapComplete/src/commit/17ab3dafe61dff968482f0fa8d4a00a13b0cd083/Docs/ServerConfig/hetzner/Caddyfile#L30) (optioneel, moeilijk)
-- Zet de 'cache-control' aan zodat je browser caching gaat doen
 
 ---
 
@@ -318,12 +326,5 @@ Documentatie zoeken, lezen en gebruiken is een belangrijke vaardigheid. Het moet
 - Configureer je domein in je caddyfile
 - Test of `https://<jouw-domein>` werkt
 
-
-
----
-
-### Meer info, bronnen
-
-[Officiële caddy documentatie](https://caddyserver.com/docs/getting-started)
 
 

@@ -10,19 +10,21 @@ Hoe raakt dit in productie?
 
 ### Optie 1: handmatig
 
-Je connecteert via SSH met de server, doet een git pull en deployed
+Je connecteert via SSH met de server, doet een git pull en deployt vanaf daar
+
+(of: je bouwt alles op je computer en gaat vanaf daar pushen)
 
 note:
 
 - kost veel tijd
 - veel kans op fouten
-- hoe zit 't met je automatische testeb?
+- hoe zit 't met je automatische testen?
 
 ---
 
 ### Optie 2: scheduled releases
 
-Je wacht. Het bedrijf waarin je werkt maakt elk halfjaar een nieuwe versie
+Je wacht. Het bedrijf waarin je werkt, maakt elk halfjaar een nieuwe versie
 
 
 note:
@@ -30,7 +32,7 @@ note:
 - dit is eerder zeldzaam geworden, maar werd vroeger gebruikt wanneer een nieuwe versie van de CD (!) gedistribueerd werd
 - sommige OS doen dit nog, bv "Ubuntu", waar het versienummer (bv: 25.10) verwijst naar het jaar (2025) en de maand (oktober)
 	+ Nog steeds backports voor dringende bugfixes via het internet!
-- Dit soort release cycles hebben ook typisch een 'codefreeze' aka 'integratieperiode' om te testen
+- Dit soort release cycles hebben ook typisch een 'codefreeze' aka 'integratieperiode' om te testen. Dit betekent: geen nieuwe features, enkel fixes voor een bepaalde periode
 
 ---
 
@@ -42,6 +44,7 @@ notes:
 - staat voor _Continuous Integration/Continuous Deployment_
 
 ---
+
 Pipeline
 <img src="./afbeeldingen/ci-cd-flow-desktop.png" />
 
@@ -180,13 +183,14 @@ note:
 - source.mapcomplete.org is een seflhosted forgejo, login met OSM-account
 - er is ook nog Gitlab, maar die gebruik ik niet graag
 
---- 
+
+---
 
 ### En hoe zit het nu met die actions?
 
 _Ook_ een schaamteloze kloon, een _Github-actions_ werkt (meestal) out of the box
-Codeberg.org biedt zelf (gelimiteerde) runners aan
 
+Codeberg.org biedt zelf (gelimiteerde) runners aan
 
 ---
 

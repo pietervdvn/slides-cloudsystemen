@@ -137,7 +137,7 @@ Meest bekende voorbeeld is github
 
 ### Software-specifiek
 
-Door de _forge_ uitegevoerd -> specifiek voor welke serversoftware je gebruikt
+Door de _forge_ uitgevoerd -> specifiek voor welke serversoftware je gebruikt
 
 Bv: github gebruikt "Github actions"-bestanden met hun specificatie, deze staan in `.github/workflows`
 

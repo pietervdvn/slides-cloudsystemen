@@ -140,7 +140,6 @@ Ja. Je idee zelf heeft geen bescherming onder het <b>auteursrecht</b>, maar de s
 Met <b>patentrecht</b> kan je ideeën laten beschermen.
 
 </section>
-
 ---
 
 <section>
@@ -185,10 +184,15 @@ note:
 https://en.wikipedia.org/wiki/Monkey_selfie_copyright_dispute
 ---
 
+
 # De selfie van de aap
+
+
 
 note: 
 werkvorm door recht te staan en in een lijn te bewegen. Aan de ene kant: fotograaf heeft copyright; andere kant: de aap heeft het copyright; in het midden: andere mening of publiek domein
+
+
 ---
 
 ## Afgeleide werken
@@ -199,6 +203,8 @@ Je kind verknipt de foto's en maakt er allerlei collages mee; ze zijn best mooi.
 Je organiseert een kleine tentoonstelling en vraagt inkomgeld.
 
 Mag dit?
+
+
 
 
 note: 
@@ -224,9 +230,13 @@ https://nl.wikipedia.org/wiki/Afgeleid_werk
 Als je een stuk (open source) code neemt en aanpassingen maakt, dan is dit een afgeleid werk
 
 
+
+
 note: 
 https://nl.wikipedia.org/wiki/Afgeleid_werk
 ---
+
+
 
 
 note: 
@@ -389,22 +399,110 @@ Hoe kunnen we weten dat een 'kunstwerk werd bedoeld om permanent in openbare pla
 
 De Wikipedianen hebben gestreden voor dit recht! <ref>https://www.wikimedia.nl/actueel/persberichten/voorstel-voor-inperking-panoramavrijheid-is-stap-terug-in-de-tijd/</ref>
 
+---
+
+<section>
+Een museum heeft een databank met alle gegevens van hun kunstwerken op de website, bv: naam van het kunstwerk, naam artiest, jaar van creatie, eigenaar, ...
+
+Mag je deze data scrapen en op jouw website zetten?
+</section>
+
+<section>
+nee, databankrecht beschermt dit. ER zijn wél uitzonderingen voor onderzoekers
+</section>
+---
+
+
+---
+
+# Databankrecht
+
+Een databank opbouwen vergt ook veel inspanning, maar weinig creatief werk
+
+Bescherming via een deeltak van het auteursrecht, namelijk het **databankrecht**
+
+Erg gelijkaardig aan auteursrecht - maar erg belangrijk in de informaticawereld!
+
+---
+
+## Databankrecht:
+
+Het alleenrecht op het kopiëren, verspreiden, tentoonstellen en anderzijds openbaar maken of reproduceren van de databank als geheel
+
+
+---
+
+## Vanaf en tot wanneer?
+
+De bescherming krijg je *automatisch* wanneer je de databank maakt, geen registratie nodig.
+
+Deze bescherming geldt tot 15 jaar na de laatste substantiële investering in de databank.
+
+---
+
+## Databankrecht: voorbeeld
+
+- Klantgegevens
+- Bedrijvengidsen
+- Kredietinformatie
+
+Let op: hier is uiteraard ook *privacy*wetgeving van toepassing!
+
+---
+
+## Databankrecht: uitzonderingen
+
+Indien een bedrijf voor de normale werking de data sowieso publiek moet maken, vervalt de bescherming.
+
+BV: de Post moet sowieso publiek maken waar alle brievenbussen hangen. Je mag dus de data van de bpost-website afhalen en hergebruiken
+
+
+---
+
+
+<section>
+Mag je de data van Batopin downloaden en hergebruiken?
+</section>
+
+<section>
+ja. Dit is een samenwerking tussen banken om ATM-machines aan te bieden.
+Zij hebben noodzakelijkerwijs een lijst van ATM-machines nodig én moeten dit ook aan het publiek vrijgeven. De uitzondering geldt
+</section>
+---
+
+Mag je NMBS-treinurendatabank scrapen en je eigen routeplanner maken?
+Ook als de NMBS dreigt om hiertegen procederen?
+
+---
+
+Jazeker, zie de blog van Pieter Colpaert.
+Is niet tot een rechtzaak gekomen, maar heeft wel - traag maar zeker - een koerswijziging teweeg gebracht
 
 ---
 
 <section>
-Mag je een foto maken van de Eiffeltoren wanneer deze 's nachts fancy kleuren heeft?
+Voor je project wil je een kaart maken met alle brievenbussen in Europa.
+
+Mag je deze locaties van de brievenbussen van Google Maps halen?
+Immers, Google Maps haalde die toch ook gewoon van de (publiek toegankelijke) databanken van de post-operatoren?
 </section>
 
 <section>
-Nee. De Eiffeltoren valt onder recht van panorama, maar de kleurkeuze is _ook_ een creatief werk dat _niet_ onder de Franse wetgeving van Panoramavrijheid valt.
-De Franse wetgeving laat ook geen commercieel gebruik van deze foto's toe! (België wel)
+Nee, Google investeerde tijd en moeite in het harmoniseren van al die data
 </section>
+---
 
+### Tandem met auteursrecht?
+
+We bekijken de eerste minuut van "Frozen"
 
 ---
 
-# Tijdsbeperking copyright
+### Illegale extentie van auteursrecht
+
+Net voordat de copyright op 'Steamboat Willy' ging vervallen, heeft Disney geprobeerd om een fragmentje van steamboat willy als "logo" te gebruiken bij de nieuwe films. Dit was een poging om 'Steamboat Willy' volgens het _merkenrecht_ toch nog te beschermen!
+
+[Uitsmijter: John Olliver met Steamboat Willy](https://www.youtube.com/watch?v=AaMxn_WD-nc)
 
 ---
 
@@ -836,6 +934,115 @@ https://legallayer.substack.com/p/who-owns-the-claude-code-wrote
 https://en.osm.town/@cwebber@social.coop/116426153590669875
 ---
 
+
+
+---
+
+# Legale frameworks: trademarks
+
+Het logo van Microsoft zijn 4 gekleurde vierkanten. Dat is te trivaal om via auteursrecht beschermd te zijn.
+
+Mag ik dit gewoon op mijn website zetten?
+
+<section><b>Nee</b></section>
+
+---
+
+### Wat is een 'merk'?
+
+> een merk worden gevorm door alle tekens, in het bijzonder woorden, waaronder namen van personen, of tekeningen, letters, cijfers, kleuren, vormen van waren of verpakkingen van waren, of geluiden, mits deze de waren of diensten van een onderneming kunnen onderscheiden van die van andere ondernemingen, en duidelijk in het register kunnen worden weergegeven
+
+
+---
+
+### Wanneer heb je bescherming?
+
+Na registratie in het merkenregister
+
+In Belgie (+Nederland + Luxenburg):  via het Benelux-Bureau voor de Intellectuele Eigendom te Den Haag
+
+Ook in andere landen is iedere keer registratie nodig
+
+note: geen _automatisch toegekend recht_ in tegenstelling tot auteursrecht
+
+
+---
+
+### Gericht op marktwerking
+
+Het merkenrecht richt zich vooral op marktwerking (i.e. namaak tegengaan)
+
+Een nieuwe merkregistratie kan dus geweigerd worden als je merk te generiek is of teveel op een reeds bestaand merk lijkt, zeker binnen hetzelfde marktsegment.
+
+I.e. je mag dus gerust je restaurant "Ubuntu" noemen
+
+---
+
+### Vliebay
+
+
+<section>
+Interface van veilingsite "Ebay"
+<img src='./ebay.jpg'/>
+</section>
+<section>
+Actie van een school "De Vlieger" waar ze voor fondsenwerving dingen veilen
+<img src='./Vliebay.png'/>
+</section>
+<section>
+Mag dit?
+</section>
+<section>
+Neen, duidelijke nabootsing van vorm en stijl, bovendien binnen het zelfde marktsegment ("veilingen").
+<br/>
+Grote kans op verwarring bij de consument!
+<br>
+<i>Maar: beperkte duurtijd, enkel bij ouders van deze school. Context maakt veel duidelijk, hiervoor gaat Ebay geen klacht indienen</i>
+</section>
+<section>
+Wacht even... Er was toch een uitzondering voor educatief gebruik?
+</section>
+<section>
+Neen.
+<ul>
+<li>Dit betreft het MERKEN-recht. De uitzondering geldt enkel op AUTEURS-recht.</li>
+<li>Dit is eerder commercieel gebruik; duidelijk buiten de klas</li>
+</ul>
+</section>
+
+---
+
+### Open Source
+
+Veel OpenSource-projecten hebben _toch_ hun merk geregistreerd en leggen voorwaardes op aan het gebruik van het logo
+
+---
+
+<section>
+Mag je het logo van Wikipedia gebruiken om:
+
+1. op een t-shirt te zetten voor persoonlijk gebruik
+2. om die t-shirt te gaan verkopen in een winkeltje
+3. om dit op de cover van je eigen gemaakte encyclopedie te zetten?
+
+Hint: zoek de trademark policy van Wikipedia
+</section>
+
+<section>
+Hiervoor moet je de trademark policy van wikipedia nalezen, op https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_Trademark_Policy/nl
+
+1. Ja
+2. Nee, verkopen is niet toegestaan
+3. Nee, dit is misleidend
+</section>
+---
+
+Zelfde oefening voor https://osmfoundation.org/wiki/Trademark_Policy
+
+---
+
+
+
 ### Sources
 - https://en.osm.town/@cwebber@social.coop/116426153590669875
 - https://en.wikipedia.org/wiki/Copyright_Term_Extension_Act
@@ -857,44 +1064,51 @@ item_3[Wat met werk?] --> item_3[Wat met werk?];
 item_0[Legale frameworks: copyright] --> item_4[IntellectualProperty_Usage];
 item_3[Wat met werk?] --> item_4[IntellectualProperty_Usage];
 item_0[Legale frameworks: copyright] --> item_7[IntellectualProperty];
+item_0[Legale frameworks: copyright] --> item_10[IntellectualProperty_Databaseright];
+item_10[IntellectualProperty_Databaseright] --> item_10[IntellectualProperty_Databaseright];
+item_27[Trademarks] --> item_27[Trademarks];
 item_0[Legale frameworks: copyright] --> item_1[Afgeleide werken];
 item_0[Legale frameworks: copyright] --> item_2[Welke rechten ontleen je aan je auteursrecht];
-item_3[Wat met werk?] --> item_11[Educatief gebruik];
-item_11[Educatief gebruik] --> item_11[Educatief gebruik];
-item_3[Wat met werk?] --> item_12[IntellectualProperty_exceptions];
-item_11[Educatief gebruik] --> item_12[IntellectualProperty_exceptions];
-item_3[Wat met werk?] --> item_13[Persoonlijke kopie];
-item_11[Educatief gebruik] --> item_13[Persoonlijke kopie];
-item_3[Wat met werk?] --> item_14[Persoonlijk gebruik];
-item_11[Educatief gebruik] --> item_14[Persoonlijk gebruik];
-item_3[Wat met werk?] --> item_15[Platformen];
-item_11[Educatief gebruik] --> item_15[Platformen];
-item_3[Wat met werk?] --> item_16[Recensies en kritieken];
-item_11[Educatief gebruik] --> item_16[Recensies en kritieken];
+item_3[Wat met werk?] --> item_13[Educatief gebruik];
+item_13[Educatief gebruik] --> item_13[Educatief gebruik];
+item_3[Wat met werk?] --> item_14[IntellectualProperty_exceptions];
+item_13[Educatief gebruik] --> item_14[IntellectualProperty_exceptions];
+item_3[Wat met werk?] --> item_15[Persoonlijke kopie];
+item_13[Educatief gebruik] --> item_15[Persoonlijke kopie];
+item_3[Wat met werk?] --> item_16[Persoonlijk gebruik];
+item_13[Educatief gebruik] --> item_16[Persoonlijk gebruik];
+item_3[Wat met werk?] --> item_17[Platformen];
+item_13[Educatief gebruik] --> item_17[Platformen];
+item_3[Wat met werk?] --> item_18[Recensies en kritieken];
+item_13[Educatief gebruik] --> item_18[Recensies en kritieken];
 item_3[Wat met werk?] --> item_0[Uitzonderingen op copyright];
-item_11[Educatief gebruik] --> item_0[Uitzonderingen op copyright];
-item_3[Wat met werk?] --> item_17[Vrijheid van panorama];
-item_11[Educatief gebruik] --> item_17[Vrijheid van panorama];
-item_0[Legale frameworks: copyright] --> item_23[Tijdsbeperking copyright];
-item_0[Legale frameworks: copyright] --> item_24[IntellectualProperty_Expiry];
-item_0[Legale frameworks: copyright] --> item_25[Steamboat Willy];
-item_0[Legale frameworks: copyright] --> item_26[Vervaltermijn VS];
-item_0[Legale frameworks: copyright] --> item_27[Vervaltermijn EU];
-item_0[Legale frameworks: copyright] --> item_28[Voorbeelden van hergebruik];
-item_0[Legale frameworks: copyright] --> item_22[DRM];
+item_13[Educatief gebruik] --> item_0[Uitzonderingen op copyright];
+item_3[Wat met werk?] --> item_19[Vrijheid van panorama];
+item_13[Educatief gebruik] --> item_19[Vrijheid van panorama];
+item_0[Legale frameworks: copyright] --> item_9[Databankrecht];
+item_0[Legale frameworks: copyright] --> item_20[Tijdsbeperking copyright];
+item_20[Tijdsbeperking copyright] --> item_28[Tandem met auteursrecht?];
+item_27[Trademarks] --> item_28[Tandem met auteursrecht?];
+item_0[Legale frameworks: copyright] --> item_21[IntellectualProperty_Expiry];
+item_0[Legale frameworks: copyright] --> item_22[Steamboat Willy];
+item_0[Legale frameworks: copyright] --> item_23[Vervaltermijn VS];
+item_0[Legale frameworks: copyright] --> item_24[Vervaltermijn EU];
+item_0[Legale frameworks: copyright] --> item_25[Voorbeelden van hergebruik];
+item_0[Legale frameworks: copyright] --> item_33[DRM];
 item_3[Wat met werk?] --> item_5[Licentie?];
 item_3[Wat met werk?] --> item_6[Essentiële vrijheden volgens Free Software Foundation];
 item_1[Afgeleide werken] --> item_8[Hoe werkt een LLM];
 item_3[Wat met werk?] --> item_8[Hoe werkt een LLM];
-item_0[Legale frameworks: copyright] --> item_19[LLM IP op gewichten];
-item_8[Hoe werkt een LLM] --> item_19[LLM IP op gewichten];
-item_0[Legale frameworks: copyright] --> item_20[IntellectualProperty_AI];
-item_8[Hoe werkt een LLM] --> item_20[IntellectualProperty_AI];
-item_19[LLM IP op gewichten] --> item_20[IntellectualProperty_AI];
-item_0[Legale frameworks: copyright] --> item_21[LLM IP op output];
-item_8[Hoe werkt een LLM] --> item_21[LLM IP op output];
-item_19[LLM IP op gewichten] --> item_21[LLM IP op output];
-item_3[Wat met werk?] --> item_9[Veel voorkomende licenties voor kunst];
-item_1[Afgeleide werken] --> item_18[Auteursrecht ten tijde van LLMs];
-item_3[Wat met werk?] --> item_18[Auteursrecht ten tijde van LLMs]
+item_0[Legale frameworks: copyright] --> item_30[LLM IP op gewichten];
+item_8[Hoe werkt een LLM] --> item_30[LLM IP op gewichten];
+item_0[Legale frameworks: copyright] --> item_31[IntellectualProperty_AI];
+item_8[Hoe werkt een LLM] --> item_31[IntellectualProperty_AI];
+item_30[LLM IP op gewichten] --> item_31[IntellectualProperty_AI];
+item_0[Legale frameworks: copyright] --> item_32[LLM IP op output];
+item_8[Hoe werkt een LLM] --> item_32[LLM IP op output];
+item_30[LLM IP op gewichten] --> item_32[LLM IP op output];
+item_3[Wat met werk?] --> item_11[Veel voorkomende licenties voor kunst];
+item_1[Afgeleide werken] --> item_29[Auteursrecht ten tijde van LLMs];
+item_3[Wat met werk?] --> item_29[Auteursrecht ten tijde van LLMs];
+item_10[IntellectualProperty_Databaseright] --> item_34[Databankrecht: uitzonderingen]
 ```
